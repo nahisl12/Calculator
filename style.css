@@ -9,5 +9,37 @@ body {
 }
 
 .container {
-    
+
+}
+
+.calc-body {
+    width: 400px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: grey;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    width: 100%;
+    height: 20%;
+    font-size: 40px;
+    background: black;
+    color: white;
+    text-align: right;  
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 399px;
+    height: 399px;
+}
+
+.numpad {
+    font-size: 30px;
+    text-align: center;
 }
