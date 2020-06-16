@@ -34,9 +34,9 @@ function operate(operator, a, b) {  //Takes an operator and 2 variables to call/
 /*DOM Functions */
 const display = document.querySelector('.display');
 const keys = document.querySelector('.keys');
-let firstEntry;
-let secondEntry;
-let operation;
+let firstEntry = 0;     // Stores the first set of numbers entered
+let secondEntry = 0;    // Second set of numbers entered
+let operation;          // Stores the pressed operation for calculations
 
 keys.addEventListener('click', function(event){     //Adds an eventlistener to the keys class to look for button clicks
     const keyPressed = event.target;                //Checks for an event on whatever button is pressed
@@ -80,7 +80,9 @@ keys.addEventListener('click', function(event){     //Adds an eventlistener to t
                         display.textContent = displayedNum + '9';
                         break;  
                     case 'decimal':
+                        if(!displayedNum.includes('.')) {
                         display.textContent = displayedNum + '.';
+                        }
                         break;  
                     case 'add':
                         firstEntry = displayedNum;  //Stores the current displayed numbers into this function
@@ -108,6 +110,9 @@ keys.addEventListener('click', function(event){     //Adds an eventlistener to t
                         break;
                     case 'clear':
                         display.textContent = '0';
+                        firstEntry = 0;
+                        secondEntry = 0;
+                        operation = '';
                         break;
                 }
             }
